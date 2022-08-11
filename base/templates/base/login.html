@@ -1,5 +1,9 @@
 <h1>Login</h1>
-<a href="{% url 'tasks' %}">fucc go bacc</a>
+{% if request.user.is_authenticated %}
+    <p>{{ request.user }}</p>
+    <a href="{% url 'tasks' %}">Fucc go bacc</a>
+{% endif %}
+
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
