@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h1>Register</h1>
 {% if request.user.is_authenticated %}
     <p>{{ request.user }}</p>
     <a href="{% url 'tasks' %}">Fucc go bacc</a>
@@ -10,4 +10,4 @@
     <input type="submit" value="Login">
 </form>
 
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<p>Already registered? <a href="{% url 'login' %}">Login</a></p>
