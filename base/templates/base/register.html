@@ -1,4 +1,7 @@
-<h1>Register</h1>
+{% extends 'base/main.html' %}
+{% block content %}
+
+
 {% if request.user.is_authenticated %}
     <p>{{ request.user }}</p>
     <a href="{% url 'tasks' %}">Fucc go bacc</a>
@@ -11,3 +14,6 @@
 </form>
 
 <p>Already registered? <a href="{% url 'login' %}">Login</a></p>
+
+
+{%  endblock content %}<h1>Register</h1>
