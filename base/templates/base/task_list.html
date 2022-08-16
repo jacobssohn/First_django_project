@@ -12,15 +12,16 @@
     <a href="{% url 'login' %}">Login</a> {% endif %}
 </div>
 
+<div id="search-add-wrapper">
+    <form method="GET" style="margin-top: 20px; display: flex;">
+        <input type="text" name="search-area" value="{{ search_input }}">
+        <input class="button" type="submit" value="search">
+    </form>
+    <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+</div>
 
-<hr>
 
-{#<a href="{% url 'task-create' %}">Add Task</a>#}
 
-{#<form method="GET">#}
-{#    <input type="text" name="search-area" value="{{ search_input }}">#}
-{#    <input type="submit" value="search">#}
-{#</form>#}
 
 <div class="task-items-wrapper">
     {% for task in tasks %}
@@ -34,9 +35,8 @@
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             {% else %}
                 <div class="task-title">
-                    <div class="task-incomplete-icon">
-                        <a href="{% url 'task-update' task.id %}">{{ task }}</a>
-                    </div>
+                    <div class="task-incomplete-icon"></div>
+                    <div href="{% url 'task-update' task.id %}">{{ task }}</div>
                 </div>
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             {% endif %}
